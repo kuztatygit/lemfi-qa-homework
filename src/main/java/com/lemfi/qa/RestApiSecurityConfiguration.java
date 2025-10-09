@@ -14,6 +14,10 @@ public class RestApiSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers(
+                        "/swagger-ui/**",
+                        "/v3/api-docs/**"
+                ).permitAll()
                 .antMatchers("/public/**").permitAll() // Public endpoint
                 .antMatchers("/h2-console/**").permitAll() // Public endpoint
                 .antMatchers("/api/**").authenticated()
