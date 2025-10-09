@@ -1,0 +1,26 @@
+
+# Build outputs
+target/
+build/
+out/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# Node/Front (if any)
+node_modules/
+dist/
+
+# Misc
+*.log
+.env
+app.env

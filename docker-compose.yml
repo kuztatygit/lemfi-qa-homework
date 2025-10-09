@@ -1,0 +1,18 @@
+
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: local_docker/Dockerfile
+    image: qa-service:h2
+    container_name: qa-service-h2
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./app.env
+    volumes:
+      - appdata:/opt/app/data
+
+volumes:
+  appdata:
