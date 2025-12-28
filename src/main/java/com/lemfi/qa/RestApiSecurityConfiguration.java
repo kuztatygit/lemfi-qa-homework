@@ -30,6 +30,4 @@ public class RestApiSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.headers().frameOptions().disable();
     }
-
-
 }

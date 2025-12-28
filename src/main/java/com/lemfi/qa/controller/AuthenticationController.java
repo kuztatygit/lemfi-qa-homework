@@ -38,11 +38,10 @@ public class AuthenticationController {
         Optional<UserDTO> registeredUser = registrationService.registerUser(req);
         if (registeredUser.isPresent()) {
             authenticationHandler.authenticate(registeredUser.get().getId());
-            return ResponseEntity.status(200).body(new RegisterUserResponse(registeredUser.get(), new Message("SUCCESS", "User registered")));
+            return ResponseEntity.status(200).body(new RegisterUserResponse(registeredUser.get(),
+                    new Message("SUCCESS", "User registered")));
         }
 
         return ResponseEntity.status(400).body(new Message("FAIL", "Something went wrong"));
     }
-
-
 }

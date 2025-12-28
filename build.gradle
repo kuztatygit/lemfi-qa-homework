@@ -25,6 +25,8 @@ dependencies {
 
     annotationProcessor 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
+    testImplementation("io.rest-assured:rest-assured:6.0.0")
+    testImplementation 'net.datafaker:datafaker:2.3.1'
 
     implementation 'org.projectlombok:lombok'
     implementation 'com.h2database:h2'
