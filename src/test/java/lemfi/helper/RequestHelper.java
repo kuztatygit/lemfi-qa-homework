@@ -18,6 +18,7 @@ public class RequestHelper {
         log.info("{} >> {}", uri, json);
         return RestAssured
                 .given()
+                .filter(AllureRestAssuredHelper.filter())
                 .contentType(ContentType.JSON)
                 .body(json)
                 .when()
@@ -42,11 +43,11 @@ public class RequestHelper {
         log.info("{} >> GET", uri);
         return RestAssured
                 .given()
+                .filter(AllureRestAssuredHelper.filter())
                 .when()
                 .get(uri)
                 .then()
                 .extract()
                 .response();
     }
-
 }
